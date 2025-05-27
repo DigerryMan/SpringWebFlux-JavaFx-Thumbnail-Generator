@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="1080.0" stylesheets="/GUI/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.reaktywni.GUI.ImageGalleryPresenter">
+    <top>
+        <HBox>
+            <VBox prefHeight="74.0" prefWidth="892.0" BorderPane.alignment="CENTER">
+                <Label prefHeight="26.0" text="Import your images to the app" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox prefWidth="200.0" spacing="10.0">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <Button mnemonicParsing="false" onAction="#openSelectionWindow" text="Select Images" />
+                    <Button mnemonicParsing="false" onAction="#sendAndReceiveImages" text="Send" />
+               <Button id="refreshButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#refreshGridOnButton" prefHeight="25.0" prefWidth="25.0" textAlignment="CENTER">
+                  <HBox.margin>
+                     <Insets left="15.0" />
+                  </HBox.margin>
+               </Button>
+                </HBox>
+                <Label fx:id="filesSelectedLabel" text="Wybrano x elementów" visible="false" />
+                <BorderPane.margin>
+                    <Insets bottom="10.0" />
+                </BorderPane.margin>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="74.0" prefWidth="120.0" spacing="5.0">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+                <padding>
+                    <Insets bottom="5.0" />
+                </padding>
+                <Label prefHeight="18.0" text="Thumbnails size" />
+                <Slider fx:id="sizeSlider" blockIncrement="1.0" majorTickUnit="1.0" max="2.0" minorTickCount="0" prefHeight="39.0" prefWidth="246.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+            </VBox>
+         <BorderPane.margin>
+            <Insets bottom="3.0" top="-3.0" />
+         </BorderPane.margin>
+        </HBox>
+    </top>
+    <center>
+        <HBox spacing="10.0">
+            <TreeView fx:id="dirSelectionView" prefWidth="150.0">
+                <TreeItem expanded="true" value="Root" />
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            </TreeView>
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" prefWidth="900.0" BorderPane.alignment="CENTER">
+                <GridPane fx:id="gridPane" alignment="CENTER" hgap="20.0" vgap="20.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="160.0" minHeight="160.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="160.0" minHeight="160.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <BorderPane.margin>
+                        <Insets />
+                    </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+                </GridPane>
+            </ScrollPane>
+        </HBox>
+    </center>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</BorderPane>
