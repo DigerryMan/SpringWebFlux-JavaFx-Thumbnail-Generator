@@ -1,4 +1,4 @@
-# JavaFX-gallery-viewer-master
+# SpringWebFlux-JavaFx-Thumbnail-Generator
 
 ---
 
